@@ -62,9 +62,20 @@ struct MultiplicationView: View {
                             .foregroundColor(.green)
                     }
                     
-                    //Show this when the answer was
+                    //Show this when the answer was checked and found to be false
+                    
+                    if answerChecked == true && answerCorrect == false {
+                        Image(systemName: "x.square")
+                            .foregroundColor(.red)
+                    }
                 }
+                Spacer()
+                
+                TextField("",
+                          text: $input)
+                .multilineTextAlignment(.trailing)
             }
+            .padding(.horizontal)
             
             
         }
